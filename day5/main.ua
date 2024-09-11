@@ -7,7 +7,7 @@ Part₁ ← (
   ⍢(
     +⟜⊃(⊏|⍜⊏(+1)) # Go to next, inc curr
     ⊙⊙(+1)        # Inc step count
-  | >◡⊃(⊙◌|⋅⧻)    # Are we outside
+  | >◡⊃⊙◌⋅⧻       # Are we outside
   )
   ◌◌ # Keep only step count
 )
@@ -16,10 +16,7 @@ Part₂ ← (
   ⊜⋕⊸≠@\n # Split on newline
   0⊙0
   ⍢(
-    +⟜⊃(
-      ⊏
-    | ⍜⊏+ ⊃(⋅⊙∘|⊙⋅◌) ⨬(1|¯1)≥3 ◡⊏
-    )
+    +⟜⊃(⊏|⍜⊏+ ⊃⋅⊙∘∘ ⨬(1|¯1)≥3 ◡⊏)
     ⊙⊙(+1)     # Inc step count
   | >◡⊃(⊙◌|⋅⧻) # Are we outside
   )
@@ -27,22 +24,8 @@ Part₂ ← (
 )
 
 # ===== TESTS =====
-$ 0
-$ 3
-$ 0
-$ 1
-$ -3
-$ 
-Part₁
-⍤⟜≍: 5
-$ 0
-$ 3
-$ 0
-$ 1
-$ -3
-$ 
-Part₂
-⍤⟜≍: 10
+⍤⟜≍: 5 Part₁ "0\n3\n0\n1\n-3\n"
+⍤⟜≍: 10 Part₂ "0\n3\n0\n1\n-3\n"
 
 # ===== RUNNING =====
 
