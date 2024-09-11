@@ -3,14 +3,14 @@ Parse ← ⊜(□⊜□⊸≠@\s)⊸≠@\n # Sep by \n, then \s
 
 Part₁ ← (
   Parse
-  ⍚(/×◰) # Valid?
+  ⍚(/×◰) # Valid phrase?
   °□/+   # How many
 )
 
 Part₂ ← (
   Parse
   ⍚⍚(⊏⊸⍏) # Make anagrams equal
-  ⍚(/×◰)  # Valid?
+  ⍚(/×◰)  # Valid phrase?
   °□/+    # How many
 )
 
